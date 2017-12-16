@@ -1,21 +1,18 @@
-require './test/test_helper'
+require 'rails_helper'
 
-class LinkTest < CapybaraTestCase
-  def test_user_can_see_the_homepage
+describe "user actions" do
+  scenario 'user sees link to create account' do
     visit '/'
-    click_on "About"
 
-    assert_equal 200, page.status_code
-    assert_equal '/index', current_path
-    assert page.has_content?("About Me!")
-  end
+    click_on "Sign Up to Be a User"
 
-  def test_user_can_see_other_pages
-    visit '/'
-    click_on "Contact"
+    expect(current_path).to eq(new_user_path)
 
-    assert_equal 200, page.status_code
-    assert_equal '/contact', current_path
-    assert page.has_content?("Phone Number")
+    fill_in :username, with: "funbucket13"
+    fill_in :password, with: "test"
+
+    click_on "Create User"
+
+    expect(page).to have_content("Welcome, funbucket13!")
   end
 end
