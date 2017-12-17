@@ -7,9 +7,9 @@ describe "user actions" do
     click_on "Sign Up"
 
     expect(current_path).to eq(new_user_path)
-
-    fill_in :username, with: "funbucket13"
-    fill_in :password, with: "test"
+    # save_and_open_page
+    fill_in :Username, with: "funbucket13"
+    fill_in :Password, with: "test"
 
     click_on "Create User"
 
