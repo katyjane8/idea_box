@@ -1,4 +1,3 @@
-
 FactoryBot.define do
   factory :idea do
     title "This idea"
