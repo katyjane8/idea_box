@@ -17,16 +17,17 @@ RSpec.describe Idea, type: :model do
 
     context "valid attributes" do
       it "is valid with a title and body" do
-        idea = Idea.new(title: "yo", body: "hello")
+        category = create(:category)
+        idea = create(:idea, category: category)
         expect(idea).to be_valid
       end
     end
+
+  describe "relationships" do
+    it "belongs to a category" do
+      idea = Idea.new(title: "yo", body: "hello")
+      expect(idea).to respond_to(:category)
+    end
   end
 
-  # describe "relationships" do
-  #   it "belongs to a category" do
-  #     idea = create(:idea)
-  #     expect(idea).to respond_to(:category)
-  #   end
-  # end
-# end
+end
