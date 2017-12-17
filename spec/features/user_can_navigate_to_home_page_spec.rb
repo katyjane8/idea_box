@@ -7,10 +7,10 @@ describe "user actions" do
     click_on "Sign Up"
 
     expect(current_path).to eq(new_user_path)
-    # save_and_open_page
-    fill_in :Username, with: "funbucket13"
-    fill_in :Password, with: "test"
+    fill_in "user[username]", with: "funbucket13"
+    fill_in "user[password]", with: "test"
 
+    save_and_open_page
     click_on "Create User"
 
     expect(page).to have_content("Welcome, funbucket13!")
