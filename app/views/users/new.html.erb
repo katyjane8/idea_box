@@ -1,9 +1,27 @@
-<div class="form">
-  <%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= f.submit %>
-  <% end %>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Create New User</title>
+  </head>
+  <body>
+    <div class="form">
+      <h3>Start Idea Boxing!</h3>
+        <div class="field-wrap">
+          <%= form_for @user do |f| %>
+          <%= f.label :username, "New User Name*" %>
+          <%= f.text_field :username %>
+        </div>
+        <div class="field-wrap">
+          <%= f.label :password, "Choose a Password*" %>
+          <%= f.password_field :password %><br>
+          <p>* required field</p>
+            <div class="button">
+              <%= f.submit%>
+              <% end %>
+            </div>
+        </div>
+    </div>
+
+  </body>
+</html>

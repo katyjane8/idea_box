@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Poppins');
+
+
 $body-bg: #c4c6c6;
 $form-bg: #13232f;
 $white: #ffffff;
@@ -31,15 +34,17 @@ $br: 4px;
 
 body {
   background:$body-bg;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 h3 {
   text-align:center;
   color:$white;
   font-weight:$thin;
   margin:0 0 40px;
+  font-size: 30px;
 }
 .form {
+  color: $main;
   background: $form-bg;
   padding: 40px;
   max-width:600px;
@@ -68,4 +73,43 @@ h3 {
       color:$form-bg;
     }
   }
+}
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+label {
+  position:absolute;
+  transform:translateY(6px);
+  left:13px;
+  color:rgba($white,.5);
+  transition:all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size:22px;
+  .req {
+  	margin:2px;
+  	color:$main;
+  }
+}
+input, textarea {
+  font-size:22px;
+  display:block;
+  width:100%;
+  height:100%;
+  padding:5px 10px;
+  background:none;
+  background-image:none;
+  border:1px solid $gray-light;
+  color:$white;
+  border-radius:0;
+  transition:border-color .25s ease, box-shadow .25s ease;
+  &:focus {
+		outline:0;
+		border-color:$main;
+  }
+}
+textarea {
+  border:2px solid $gray-light;
+  resize: vertical;
 }
