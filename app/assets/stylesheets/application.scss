@@ -59,6 +59,7 @@ h3 {
   justify-content: space-between;
   flex-wrap: wrap;
   max-width: 320px;
+  text-align: center;
   a {
     background:$main;
     padding: 1em 2.4em;
@@ -101,4 +102,10 @@ input, textarea {
 textarea {
   border:2px solid $gray-light;
   resize: vertical;
+}
+.sub-btn {
+  text-align: center;
+  background:$main;
+  margin: 10px auto;
+  max-width: 320px;
 }

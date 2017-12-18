@@ -11,15 +11,11 @@
           <%= form_for @user do |f| %>
           <%= f.label :username %>
           <%= f.text_field :username, placeholder: "New User Name*" %>
-        </div>
-        <div class="field-wrap">
-          <%= f.label :password %>
+          <p><%= f.label :password %></p>
           <%= f.password_field :password, placeholder: "Choose a Password*" %><br>
           <p>* required field</p>
-            <div class="button">
-              <%= f.submit%>
-              <% end %>
-            </div>
+            <%= f.submit "Create User", class: "sub-btn" %>
+            <% end %>
         </div>
     </div>
 
