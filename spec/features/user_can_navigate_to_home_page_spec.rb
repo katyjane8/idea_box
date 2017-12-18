@@ -10,7 +10,7 @@ describe "user actions" do
     fill_in "user[username]", with: "funbucket13"
     fill_in "user[password]", with: "test"
 
-    save_and_open_page
+    # save_and_open_page
     click_on "Create User"
 
     expect(page).to have_content("Welcome, funbucket13!")
