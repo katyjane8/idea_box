@@ -9,12 +9,12 @@
       <h3>Start Idea Boxing!</h3>
         <div class="field-wrap">
           <%= form_for @user do |f| %>
-          <%= f.label :username, "New User Name*" %>
-          <%= f.text_field :username %>
+          <%= f.label :username %>
+          <%= f.text_field :username, placeholder: "New User Name*" %>
         </div>
         <div class="field-wrap">
-          <%= f.label :password, "Choose a Password*" %>
-          <%= f.password_field :password %><br>
+          <%= f.label :password %>
+          <%= f.password_field :password, placeholder: "Choose a Password*" %><br>
           <p>* required field</p>
             <div class="button">
               <%= f.submit%>
