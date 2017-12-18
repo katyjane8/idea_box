@@ -18,25 +18,6 @@ describe "user signs up for account" do
           # save_and_open_page
           expect(page).to have_content("Welcome, funbucket13!")
         end
-
-        scenario "a registered user can log in" do
-          user = User.create(username: "funbucket13", password: "test")
-
-          visit '/'
-
-          click_on "Log In"
-
-          expect(current_path).to eq(login_path)
-          fill_in "user[username]", with: user.username
-          fill_in "user[password]", with: user.password
-
-          click_on "Sign Me In"
-
-          expect(current_path).to eq(user_path(user))
-
-          expect(page).to have_content("Welcome, funbucket13!")
-          expect(page).to have_content("Logout")
-        end
       end
     end
   end
