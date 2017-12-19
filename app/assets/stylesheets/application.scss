@@ -37,11 +37,14 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 body.show {
-  background-image: url(../assets/images/PaperAirplanes.jpeg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-color: #d5e7e9;
+  background-repeat: no-repeat;
+  background-image: url(PaperAirplanes.jpeg);
   background-size: cover;
+}
+a {
+  color: #e04e40;
+  text-decoration: none;
 }
 h3 {
   text-align:center;
@@ -81,6 +84,12 @@ h3 {
       color:$form-bg;
     }
   }
+}
+.idea-container {
+  background-color: $white;
+  padding: 10px;
+  width: 30%;
+  margin: 10px;
 }
 .field-wrap {
   position: relative;

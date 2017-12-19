@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    Image Index
+    <p><%= @images.each do |image| %></p>
+    <p><%= image.name %></p>
+    <p><%= image.url %></p>
+    <% end %>
+  </body>
+</html>
