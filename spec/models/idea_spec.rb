@@ -26,8 +26,11 @@ RSpec.describe Idea, type: :model do
 
   describe "relationships" do
     it "belongs to a category" do
-      idea = Idea.new(title: "yo", body: "hello")
+      user = create(:user)
+      category = create(:category)
+      idea = create(:idea, category: category, user: user)
       expect(idea).to respond_to(:category)
+      expect(idea).to respond_to(:user)
     end
   end
 
