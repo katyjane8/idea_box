@@ -36,6 +36,13 @@ body {
   background:$body-bg;
   font-family: 'Poppins', sans-serif;
 }
+body.show {
+  background-image: url(../assets/images/PaperAirplanes.jpeg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 h3 {
   text-align:center;
   color:$white;

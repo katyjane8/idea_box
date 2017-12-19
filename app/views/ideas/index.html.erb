@@ -11,5 +11,6 @@
     <%= idea.body %>
     <% end %>
     <p><%= link_to "Create a New Idea", new_user_idea_path(current_user) %> </p>
+    <p><%= link_to "Back to #{current_user.username} homepage", user_path(current_user) %></p>
   </body>
 </html>

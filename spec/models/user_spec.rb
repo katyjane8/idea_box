@@ -2,8 +2,7 @@ require 'rails_helper'
 
 describe User do
   it "can be created as an admin" do
-    user = User.create(username: "penelope",
-                       password: "boom",
+    user = User.create(username: "penelope", password: "boom",
                        role: 1)
 
     expect(user.role).to eq("admin")
@@ -11,8 +10,7 @@ describe User do
   end
 
   it "can be created as a default user" do
-    user = User.create(username: "sammy",
-                       password: "pass",
+    user = User.create(username: "sammy", password: "pass",
                        role: 0)
 
     expect(user.role).to eq("default")
