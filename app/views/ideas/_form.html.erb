@@ -6,14 +6,14 @@
   </head>
   <body>
     <div class="form">
-      <h3>Create an Idea</h3>
+      <h3>Create an Idea!</h3>
         <div class="field-wrap">
           <%= form_for [current_user, @idea] do |f| %>
           <%= f.label :title %>
-          <%= f.text_field :title %><br><br>
+          <%= f.text_field :title, placeholder: "Idea Title*" %><br><br>
 
           <%= f.label :body %>
-          <%= f.text_area :body %><br><br>
+          <%= f.text_area :body, placeholder: "Idea*" %><br><br>
 
           <%= f.collection_select(:category_id, Category.all, :id, :title) %><br><br>
 
