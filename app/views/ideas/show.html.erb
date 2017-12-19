@@ -5,9 +5,9 @@
     <title></title>
   </head>
   <body>
-    <h1><%= @idea.title %></h1>
+    <%= @idea.title %>
     <%= @idea.body %>
-    <%= @idea.category %>
-
+    <%= @idea.category.title %>
+    <%= link_to "All Ideas", user_path(current_user) %>
   </body>
 </html>
