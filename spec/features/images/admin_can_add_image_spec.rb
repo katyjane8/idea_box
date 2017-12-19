@@ -19,7 +19,7 @@ describe "When I visit new image page" do
     end
   end
 
-  describe "as a default user" do
+  xdescribe "as a default user" do
     scenario "I see a 404 error" do
       default_user = create(:user)
 
