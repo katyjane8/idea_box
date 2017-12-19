@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="form">
+      <h3>Create an Idea</h3>
+        <div class="field-wrap">
+          <%= form_for [current_user, @idea] do |f| %>
+          <%= f.label :title %>
+          <%= f.text_field :title %><br><br>
+
+          <%= f.label :body %>
+          <%= f.text_area :body %><br><br>
+
+          <%= f.collection_select(:category_id, Category.all, :id, :title) %><br><br>
+
+          <%= f.submit class: "sub-btn" %>
+          <% end %>
+        </div>
+      </div>
+  </body>
+</html>
