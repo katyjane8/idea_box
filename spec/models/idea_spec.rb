@@ -17,8 +17,9 @@ RSpec.describe Idea, type: :model do
 
     context "valid attributes" do
       it "is valid with a title and body" do
+        user = create(:user)
         category = create(:category)
-        idea = create(:idea, category: category)
+        idea = create(:idea, category: category, user: user)
         expect(idea).to be_valid
       end
     end
