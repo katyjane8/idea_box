@@ -9,6 +9,7 @@
     <p><%= @images.each do |image| %></p>
     <p><%= image.name %></p>
     <p><%= image.url %></p>
+    <%= link_to "Create Image", new_admin_image_path %>
     <% end %>
   </body>
 </html>
