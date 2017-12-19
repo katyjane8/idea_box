@@ -4,4 +4,6 @@
 
 <% @ideas.each do |idea| %>
 <h2><%= link_to idea.title, user_idea_path(current_user, idea) %></h2>
+<p>Posted on: <%= idea.created_at.strftime("%b %d, %Y") %></p> 
+  <!-- <%= idea.created_at.strftime("%H:%M %P") %></p> -->
 <% end %>
