@@ -4,8 +4,7 @@ xdescribe "User creates a new Idea and adds an image" do
   scenario "a logged in user can create a new idea and add an image to it" do
     user = create(:user)
     category = create(:category)
-    image1 = create(:image)
-    image2 = Image.create!(name: "kangaroo", url: "https://pixabay.com/en/wallaby-rednecked-wallaby-australia-3007670/")
+    image = create(:image)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
