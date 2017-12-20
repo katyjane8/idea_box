@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
-  post "/logout", to: "sessions#destroy"
+  delete "/logout", to: "sessions#destroy"
 
   namespace :admin do
     resources :categories, only: ['index']
@@ -12,6 +12,5 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:new, :create, :show] { resources :ideas }
-  resources :images, only: [:index]
 
 end
