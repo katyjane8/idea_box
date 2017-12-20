@@ -125,3 +125,22 @@ textarea {
   margin: 10px auto;
   max-width: 320px;
 }
+.nav {
+  li {
+    float: right;
+    padding: 14px 16px;
+    text {
+    color: $white;
+    align: center;
+    decoration: none;
+    }
+  }
+  li a:hover {
+    background-color: #111;
+  }
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: $main;
+}

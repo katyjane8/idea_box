@@ -7,8 +7,7 @@
   <body>
     Image Index
     <p><%= @images.each do |image| %></p>
-    <p><%= image.name %></p>
-    <p><%= image.url %></p>
+    <p><%= image_tag image.image.url(:medium) %></p>
     <%= link_to "Create Image", new_admin_image_path %>
     <% end %>
   </body>

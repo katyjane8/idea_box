@@ -6,7 +6,12 @@
   </head>
   <body class="show">
     <h2>Idea:</h2>
-    <div class="idea-container">  
+    <div class="idea-container">
+        <% if @idea.images.exists? %>
+          <% @idea.images.each do |image| %>
+          <%= image_tag image.image.url(:thumb) %>
+          <% end %>
+        <% end %>
     Idea Title: <%= @idea.title %><br>
     Idea Content: <%= @idea.body %><br>
     Idea Category: <%= @idea.category.title %><br>

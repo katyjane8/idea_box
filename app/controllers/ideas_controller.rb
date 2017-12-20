@@ -6,7 +6,8 @@ class IdeasController < ApplicationController
   end
 
   def new
-    @idea = current_user.ideas.new
+    @idea = Idea.new
+    @images = Image.all
   end
 
   def create
@@ -19,7 +20,7 @@ class IdeasController < ApplicationController
   end
 
   def show
-    @idea = Idea.find(params[:id])
+    @idea = current_user.ideas.find(params[:id])
   end
 
   def destroy
