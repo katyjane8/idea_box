@@ -10,10 +10,9 @@ describe "registered user wants to log out" do
 
           visit "/users/#{user.id}"
 
-          click_on "Logout"
+          click_on "Log Out"
 
-          expect(page).to have_content("You've successfully logged out!")
-          expect(current_path).to eq(login_path)
+          expect(current_path).to eq(root_path)
         end
       end
     end
