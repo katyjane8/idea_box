@@ -6,14 +6,14 @@
   </head>
   <body>
     <div class="form">
-      <!-- <h3>Create an Idea!</h3> -->
+      <!-- <h3>Create or Update an Idea!</h3> -->
         <div class="field-wrap">
           <%= form_for [:admin, @image] do |f| %>
-            <% if @image.image.exists? %>
-            <%= image_tag  @image.image.url %>
-            <% end %>
-          <%= f.label :image, "Attach an Image" %><br />
-          <%= f.file_field :image %>
+            <!-- <% if @image.image.exists? %> -->
+            <!-- <%= image_tag  @image.image.url %>
+            <% end %> -->
+          <%= f.label :image, "Attach an Image" %><br>
+          <%= f.file_field :image %><br>
           <%= f.submit %>
           <% end %>
         </div>
