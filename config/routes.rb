@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "welcome#index"
 
   get "/login", to: "sessions#new"
@@ -7,12 +6,12 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/dashboard", to: "admin#dashboard"
 
+  resources :users, only: [:new, :create, :show] { resources :ideas }
 
   namespace :admin do
     resources :categories
     resources :images
     resources :users, only: [:index, :show]
+    resources :ideas, only: [:index, :show]
   end
-
-  resources :users, only: [:new, :create, :show] { resources :ideas }
 end
