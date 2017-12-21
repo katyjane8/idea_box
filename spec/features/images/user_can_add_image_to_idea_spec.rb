@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe "User creates a new Idea and adds an image" do
+describe "User creates a new Idea and adds an image" do
   scenario "a logged in user can create a new idea and add an image to it" do
     user = create(:user)
     category = create(:category)
@@ -15,7 +15,6 @@ xdescribe "User creates a new Idea and adds an image" do
 
     fill_in "idea[title]", with: 'cool idea'
     fill_in "idea[body]",  with: 'I want to have a pizza party'
-    select 'party', from: 'idea[category_id]'
 
     click_button "Create Idea"
 
