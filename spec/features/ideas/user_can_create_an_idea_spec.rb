@@ -36,7 +36,6 @@ describe "User creates a new Idea" do
     fill_in "idea[title]", with: 'cool idea'
     fill_in "idea[body]",  with: 'I want to have a pizza party'
     select 'party', from: 'idea[category_id]'
-    select 'maggie', from: 'image[images]'
     # save_and_open_page
     click_button "Create Idea"
 
