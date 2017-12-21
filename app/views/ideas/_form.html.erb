@@ -1,36 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div class="form">
-      <!-- <h3>Create an Idea!</h3> -->
-        <div class="field-wrap">
-          <%= form_for [current_user, @idea] do |f| %>
-            <%= f.label :title %>
-            <%= f.text_field :title, placeholder: "Idea Title*" %><br><br>
 
-            <%= f.label :body %>
-            <%= f.text_area :body, placeholder: "Idea*" %><br><br>
+<div class="form">
+  <!-- <h3>Create an Idea!</h3> -->
+    <div class="field-wrap">
+      <%= form_for [current_user, @idea] do |f| %>
+        <%= f.label :title %>
+        <%= f.text_field :title, placeholder: "Idea Title*" %><br><br>
 
-            <%= f.collection_select(:category_id, Category.all, :id, :title) %><br><br>
+        <%= f.label :body %>
+        <%= f.text_area :body, placeholder: "Idea*" %><br><br>
 
-            <!-- <% if @idea.images.exists? %> -->
-            <%= @images.each do |image| %>
-            <%= f.label :images %>
-            <%= image_tag image.image.url(:thumb) %>
-              <%= f.collection_check_boxes :image_ids, @images, :id, :image_file_name do |b| %>
-                <%= b.check_box %>
-                <%= b.label %>
-                <% end %>
-              <% end %>
-              <% end %>
+        <%= f.collection_select(:category_id, Category.all, :id, :title) %><br><br>
 
-            <%= f.submit class: "sub-btn" %>
+        <%= f.label :images %>
+        <% if @idea.images.exists? %>
+        <%= @images.each do |image| %>
+        <%= image_tag image.image.url(:medium) %>
+            <% end %>
           <% end %>
-        </div>
-      </div>
-  </body>
-</html>
+        <%= f.collection_check_boxes :image_ids, @images, :id, :image_file_name do |b| %>
+        <%= b.check_box %>
+        <%= b.label %>
+        <% end %>
+
+        <%= f.submit class: "sub-btn" %>
+      <% end %>
+    </div>
+  </div>
