@@ -17,11 +17,11 @@
 
             <%= f.collection_select(:category_id, Category.all, :id, :title) %><br><br>
 
-            <% if @idea.images.exists? %>
+            <!-- <% if @idea.images.exists? %> -->
             <%= @images.each do |image| %>
             <%= f.label :images %>
             <%= image_tag image.image.url(:thumb) %>
-              <!-- <%= f.collection_check_boxes :image_ids, @images, :id, :image_file_name do |b| %> -->
+              <%= f.collection_check_boxes :image_ids, @images, :id, :image_file_name do |b| %>
                 <%= b.check_box %>
                 <%= b.label %>
                 <% end %>
