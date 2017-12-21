@@ -3,5 +3,5 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   has_many :ideas
 
-  enum role: %w(default admin)
+  enum role: [:default, :admin]
 end

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if @user.authenticate(params[:password])
       session[:user_id] = @user.id
       if @user.role == "admin"
-        redirect_to admin_user_path(@user)
+        redirect_to admin_dashboard_index_path(@user)
       else
         redirect_to user_path(@user)
       end
