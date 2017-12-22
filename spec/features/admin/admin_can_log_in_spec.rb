@@ -1,25 +1,19 @@
 require 'rails_helper'
 
-describe "registered user logs in" do
+describe "registered admin logs in" do
   context "they visit the root page" do
     context "they click login link" do
       context "they enter username and password" do
         context "their role is equal to 1"
           it "logs in admin" do
             admin = create(:admin)
-            visit "/"
+            allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-            click_on "Log In"
+            visit admin_dashboard_index_path
 
-            expect(current_path).to eq(login_path)
-
-            fill_in "username", with: admin.username
-            fill_in "password", with: admin.password
-
-            click_on "Log In"
-
-            expect(page).to have_content("Welcome, #{user.username}!")
-            #expect page to be the admin dashboard
+            expect(page).to have_content("Welcome Admin!")
+            expect(page).to have_content("Create Image")
+            expect(page).to have_content("Create Category")
         end
       end
     end
