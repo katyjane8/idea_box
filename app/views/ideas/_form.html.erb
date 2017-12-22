@@ -14,7 +14,7 @@
         <%= f.label :images %>
         <% if @idea.images.exists? %>
         <%= @images.each do |image| %>
-        <%= image_tag image.image.url(:medium) %>
+        <%= image_tag image.image.url(:thumb) %>
             <% end %>
         <%= f.collection_check_boxes(:image_ids, Image.all, :id, :image_file_name) do |b| %>
         <%= b.label { b.check_box } %>
