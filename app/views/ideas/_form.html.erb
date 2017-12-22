@@ -16,10 +16,9 @@
         <%= @images.each do |image| %>
         <%= image_tag image.image.url(:medium) %>
             <% end %>
-          <% end %>
-        <%= f.collection_check_boxes :image_ids, @images, :id, :image_file_name do |b| %>
-        <%= b.check_box %>
-        <%= b.label %>
+        <%= f.collection_check_boxes(:image_ids, Image.all, :id, :image_file_name) do |b| %>
+        <%= b.label { b.check_box } %>
+        <% end %>
         <% end %>
 
         <%= f.submit class: "sub-btn" %>

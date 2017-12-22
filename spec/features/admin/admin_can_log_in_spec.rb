@@ -10,14 +10,10 @@ describe "registered admin logs in" do
             allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
             visit admin_dashboard_index_path
-            
-            fill_in "username", with: admin.username
-            fill_in "password", with: admin.password
 
-            click_on "Log In"
-
-            expect(page).to have_content("Welcome, #{admin.username}!")
-            #expect page to be the admin dashboard
+            expect(page).to have_content("Welcome Admin!")
+            expect(page).to have_content("Create Image")
+            expect(page).to have_content("Create Category")
         end
       end
     end
