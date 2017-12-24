@@ -1,6 +1,4 @@
-
 <div class="form">
-  <!-- <h3>Create an Idea!</h3> -->
     <div class="field-wrap">
       <%= form_for [current_user, @idea] do |f| %>
         <%= f.label :title %>
@@ -11,16 +9,12 @@
 
         <%= f.collection_select(:category_id, Category.all, :id, :title) %><br><br>
 
-        <%= f.label :images %>
-        <% if @idea.images.exists? %>
-        <%= @images.each do |image| %>
-        <%= image_tag image.image.url(:thumb) %>
-            <% end %>
-        <%= f.collection_check_boxes(:image_ids, Image.all, :id, :image_file_name) do |b| %>
-        <%= b.label { b.check_box } %>
+        <p>Check the box to add images:</p>
+        <%= f.label :image %>
+        <% @images.each do |image| %>
+        <%= image_tag image.image(:thumb) %>
+        <%= check_box_tag('idea[image_ids][]', image.id, @idea.image_ids.include?(image.id), id: "image-#{image.id}") %>
         <% end %>
-        <% end %>
-
         <%= f.submit class: "sub-btn" %>
       <% end %>
     </div>

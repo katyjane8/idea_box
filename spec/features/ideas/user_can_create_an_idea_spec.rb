@@ -23,7 +23,7 @@ describe "User creates a new Idea" do
     expect(page).to have_content category.title
   end
 
-  scenario "a logged in user can create a new idea with an image" do
+  scenario "a logged in user can create a new idea with a category" do
     user = create(:user)
     category = create(:category, title: "party")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
