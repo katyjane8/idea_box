@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
   <body>
     Image Index
     <p><%= @images.each do |image| %></p>
     <p><%= image_tag image.image.url(:medium) %></p>
-    <%= link_to "Create Image", new_admin_image_path %>
+    <%=  %>
     <% end %>
+
+    <%= link_to "Create Image", new_admin_image_path %>
+    <%= link_to "Back to Admin Dashboard", admin_dashboard_index_path %>
   </body>
 </html>
