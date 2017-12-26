@@ -2,8 +2,9 @@
   <div class="field-wrap">
     <%= form_for [:admin, @category] do |f| %>
       <%= f.label :title, "Create a category" %><br>
-      <%= f.text_field :title %><br>
-      <%= f.submit %>
+      <%= f.text_field :title, placeholder: "Category Title*" %><br>
+      <%= f.submit class: "sub-btn" %>
+      <%= link_to "Back to Admin Dashboard", admin_dashboard_index_path %>
     <% end %>
   </div>
 </div>
