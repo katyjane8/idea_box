@@ -1,9 +1,6 @@
 <div class="form">
   <div class="field-wrap">
     <%= form_for [:admin, @image] do |f| %>
-      <!-- <% if @image.image.exists? %> -->
-      <!-- <%= image_tag  @image.image.url %>
-      <% end %> -->
       <%= f.label :image, "Attach an Image" %><br>
       <%= f.file_field :image %><br>
       <%= f.submit class: "sub-btn" %>
