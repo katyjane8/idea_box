@@ -11,8 +11,7 @@ describe "User can visit their create idea page" do
     fill_in "idea[title]", with: "knit somethin"
     fill_in "idea[body]", with: "so great"
     select category.title, from: "idea[category_id]"
-    # find("label[for='idea_images']").click
-    select image, from: "idea[image]"
+    find("label[for='idea_image']").click
 
     click_on "Create Idea"
 
