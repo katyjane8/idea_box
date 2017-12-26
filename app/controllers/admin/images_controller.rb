@@ -1,6 +1,4 @@
 class Admin::ImagesController < Admin::BaseController
-  before_action :set_image, only: [:edit, :update, :destroy]
-
   def index
     @images = Image.all
   end
@@ -16,6 +14,12 @@ class Admin::ImagesController < Admin::BaseController
     else
       render :new
     end
+  end
+
+  def destroy
+    image = Image.find(params[:id])
+    image.destroy
+    redirect_to admin_images_path
   end
 
     private
