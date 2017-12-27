@@ -16,6 +16,12 @@ class Admin::CategoriesController < Admin::BaseController
     end
   end
 
+  def edit
+  end
+
+  def show
+  end
+
   def update
     @category.update(category_params)
     if @category.save

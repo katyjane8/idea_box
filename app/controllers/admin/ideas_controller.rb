@@ -1,5 +1,4 @@
 class Admin::IdeasController < ApplicationController
-
   def index
     @users = User.all
   end
