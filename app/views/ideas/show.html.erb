@@ -12,12 +12,11 @@
     Idea Category: <%= @idea.category.title %><br>
     <% if @idea.images.empty? %>
       <p>There are no images</p>
-    <% else %>  Images:
+    <% else %>Images:
     <% @idea.images.each do |image| %>
     <%= image_tag image.image(:thumb) %>
     <% end %>
     <% end %>
-    <p><%= link_to "Go Back to All Ideas", user_path(current_user) %></p>
     <p><%= link_to "Delete", user_idea_path(current_user, @idea), method: :delete %></p>
     <p><%= link_to "Edit", edit_user_idea_path(current_user, @idea) %></p>
     <p><%= link_to "Back to #{current_user.username} homepage", user_path(current_user) %></p>
