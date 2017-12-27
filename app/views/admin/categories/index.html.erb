@@ -1,8 +1,10 @@
-<h1>Admin Categories</h1>
-<%= link_to "Create Category", new_admin_category_path, class: "sub-btn" %><br>
-<p><%= "Category List:" %></p>
-    <p><%= @categories.each do |category| %></p>
-    <p><%= category.title %></p>
-    <%= link_to "edit", edit_admin_category_path(category) %>
-    <%= link_to "delete", admin_categories_path(category), method: "delete" %><br>
-    <% end %>
+<body>
+  <h1>Admin Categories</h1>
+  <%= link_to "Create Category", new_admin_category_path %><br>
+  <%= link_to "Back to Admin Dashboard", admin_dashboard_index_path %>
+      <p><%= @categories.each do |category| %></p>
+      <p><%= category.title %></p>
+      <%= link_to "edit category", edit_admin_category_path(category) %><br>
+      <%= link_to "delete category", admin_category_path(category), method: "delete" %><br>
+      <% end %>
+</body>

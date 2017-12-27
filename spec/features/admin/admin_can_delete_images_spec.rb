@@ -11,5 +11,6 @@ describe "Admin deletes existing image" do
     click_link "delete"
 
     expect(page).to have_content("Image Index")
+    expect(page).to_not have_content("1.jpg")
   end
 end
