@@ -16,7 +16,6 @@
         <%= check_box_tag('idea[image_ids][]', image.id, @idea.image_ids.include?(image.id), id: "image-#{image.id}") %>
         <% end %>
         <%= f.submit class: "sub-btn" %>
-        <%= link_to "Back to Admin Dashboard", admin_dashboard_index_path %>
       <% end %>
     </div>
   </div>
