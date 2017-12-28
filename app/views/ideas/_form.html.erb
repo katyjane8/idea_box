@@ -10,11 +10,13 @@
         <%= f.collection_select(:category_id, Category.all, :id, :title) %><br><br>
 
         <p>Check the box to add images:</p>
-        <%= f.label :image %>
-        <% @images.each do |image| %>
-        <%= image_tag image.image(:thumb) %>
-        <%= check_box_tag('idea[image_ids][]', image.id, @idea.image_ids.include?(image.id), id: "image-#{image.id}") %>
-        <% end %>
+        <div class="images">
+          <%= f.label :image %>
+          <% @images.each do |image| %>
+          <%= image_tag image.image(:thumb) %>
+          <%= check_box_tag('idea[image_ids][]', image.id, @idea.image_ids.include?(image.id), id: "image-#{image.id}") %>
+          <% end %>
+        </div>
         <%= f.submit class: "sub-btn" %>
       <% end %>
     </div>
