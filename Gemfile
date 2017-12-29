@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'paperclip'
 gem 'cloudinary'
+gem 'figaro'
 # gem 'sorcery', :git => 'https://github.com/NoamB/sorcery.git'
 
 # Use Capistrano for deployment
