@@ -12,6 +12,9 @@
     <div class="nav">
       <li> <%= link_to 'Log Out', logout_path, method: :delete %> </li>
     </div>
+    <p class="flash">
+      <%= flash.notice %>
+    </p>
 
     <%= yield %>
   </body>
