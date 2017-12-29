@@ -47,6 +47,6 @@ class IdeasController < ApplicationController
     end
 
     def idea_params
-      params.require(:idea).permit(:title, :body, :category_id, :image_ids => [])
+      params.require(:idea).permit(:title, :body, :category_id, :image, :image_ids => [])
     end
 end
