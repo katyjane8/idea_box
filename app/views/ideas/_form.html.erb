@@ -13,7 +13,7 @@
         <div class="images">
           <%= f.label :image %>
           <% @images.each do |image| %>
-          <%= image_tag image.image(:thumb) %>
+          <%= image_tag image.image.url(:thumb) %>
           <%= check_box_tag('idea[image_ids][]', image.id, @idea.image_ids.include?(image.id), id: "image-#{image.id}") %>
           <% end %>
         </div>
