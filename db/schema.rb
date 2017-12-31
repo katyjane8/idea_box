@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 20171229162434) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.bigint "user_id"
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.integer "image_file_size"
-    t.datetime "image_updated_at"
+    # t.string "image_file_name"
+    # t.string "image_content_type"
+    # t.integer "image_file_size"
+    # t.datetime "image_updated_at"
     t.index ["category_id"], name: "index_ideas_on_category_id"
     t.index ["user_id"], name: "index_ideas_on_user_id"
   end
