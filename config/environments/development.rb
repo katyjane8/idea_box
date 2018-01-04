@@ -21,15 +21,15 @@ Rails.application.configure do
   config.assets.debug = true
   config.assets.quiet = true
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  Paperclip.options[:command_path] = "/usr/local/bin/"
+  # Paperclip.options[:command_path] = "/usr/local/bin/"
 
   # config for amazon S3 and paperclip, method 2 using dotenv direct
-    config.paperclip_defaults = {
-      :storage => :s3,
-      :s3_credentials => {
-        :bucket => ENV['S3_BUCKET_NAME'],
-        :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-        :secret_access_key => ENV['AWS_SECRET_KEY_ID']
-      }
-    }
+    # config.paperclip_defaults = {
+    #   :storage => :s3,
+    #   :s3_credentials => {
+    #     :bucket => ENV['S3_BUCKET_NAME'],
+    #     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    #     :secret_access_key => ENV['AWS_SECRET_KEY_ID']
+    #   }
+    # }
 end

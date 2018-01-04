@@ -5,5 +5,4 @@ class Idea < ApplicationRecord
   belongs_to :user
   has_many :idea_images
   has_many :images, through: :idea_images
-  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 end
