@@ -14,9 +14,6 @@ describe "User can visit their create idea page" do
     fill_in "idea[body]", with: "so great"
     select category.title, from: "idea[category_id]"
     find("label[for='idea_image']").set(true)
-      within('.images') do
-        find("##{image.id}").click
-      end
 
     click_on "Create Idea"
 
@@ -24,6 +21,5 @@ describe "User can visit their create idea page" do
     expect(page).to have_content("knit somethin")
     expect(page).to have_content("so great")
     expect(page).to have_content(category.title)
-    expect(image.first.selected?).to eql true
   end
 end

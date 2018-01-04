@@ -3,16 +3,16 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(username: params[:username])
-    if @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      if @user.role == "admin"
-        redirect_to admin_dashboard_index_path(@user)
+    user = User.find_by(username: params[:username])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      if current_admin?
+        redirect_to admin_dashboard_index_path
       else
-        redirect_to user_path(@user)
+        redirect_to user_path(user)
       end
     else
-      flash.now[:error] = "Username or Password invalid. Plz try again, fam."
+      flash[:error] = "Username or Password invalid. Plz try again, fam."
       render :new
     end
   end
